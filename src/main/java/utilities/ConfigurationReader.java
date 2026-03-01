@@ -1,0 +1,36 @@
+package utilities;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Properties;
+
+
+public class ConfigurationReader {
+    static Properties properties;
+
+    static {
+        String path = "configuration.properties";
+        FileInputStream file = null;
+        try {
+            file = new FileInputStream(path);
+            properties = new Properties();
+            properties.load(file);
+        } catch (IOException e) {
+            System.err.println("Configuration dosyası yüklenemedi: " + path);
+            throw new RuntimeException(e);
+        } finally {
+            if (file != null) {
+                try {
+                    file.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    public static String getProperty(String key) {
+        return properties.getProperty(key);
+    }
+}
+
