@@ -4,7 +4,7 @@ Obilet.com için Selenium + Java + TestNG kullanılarak yazılmış bir otomasyo
 
 # Kullanılan Teknolojiler
 - Java
-- Selenium 4
+- Selenium
 - TestNG
 - Maven
 - Page Object Model (POM)
