@@ -46,7 +46,6 @@ public class Otobus_Arama_Test {
         // Nereden, Nereye ve tarih seçilerek arama yapılır.
         mainPage.otobusAramaYap("Antalya", "İzmir");
 
-        // Arama sonrası Seferler_Page initialize ediliyor.
         seferlerPage = new Seferler_Page();
 
         // Otobüs araması sonrası seferler sayfasına yönlendirildiği doğrulanır.
@@ -58,7 +57,7 @@ public class Otobus_Arama_Test {
         // Sefer listesinin boş olmadığı kontrol edilir.
         Assert.assertTrue(seferlerPage.seferListesiKontrol(), "Sefer listesi boş.");
 
-        // Listelenen seferlerin doğru rotada olduğu doğrulanır. (Antalya -> İzmir)
+        // Listelenen seferlerin doğru rotada olduğu doğrulanır. (Antalya, İzmir)
         Assert.assertTrue(seferlerPage.rotaDogrula("Antalya", "İzmir"), "Rota yanlış!");
 
         // Her seferin karşısında bir fiyat bilgisinin gösterildiği kontrol edilir.
