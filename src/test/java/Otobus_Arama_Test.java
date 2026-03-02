@@ -30,7 +30,7 @@ public class Otobus_Arama_Test {
 
     @BeforeClass
     public void setUp() {
-        // Tarayıcı açılıyor ve obilet.com'a yönlendiriliyor.
+        // Tarayıcı açılır ve obilet.com'a yönlendirilir.
         String url = ConfigurationReader.getProperty("url");
         Driver.getDriver().get(url);
         mainPage = new Main_Page();
@@ -39,7 +39,7 @@ public class Otobus_Arama_Test {
     @Test
     public void otobusAramaTesti() {
 
-        // Otobüs Arama öncesi Url bilgimizi alalım.
+        // Otobüs Arama öncesi Url bilgisi alınır.
         String url = Driver.getDriver().getCurrentUrl();
         System.out.println("Yönlendirme öncesi URL: " + url);
         
