@@ -8,22 +8,7 @@ import utilities.ConfigurationReader;
 import utilities.Driver;
 
 public class Otobus_Arama_Test {
-
-    Main_Page mainPage;
-    Seferler_Page seferlerPage;
-
-    @BeforeClass
-    public void setUp() {
-        // Tarayıcı açılıyor ve obilet.com'a yönlendiriliyor.
-        String url = ConfigurationReader.getProperty("url");
-        Driver.getDriver().get(url);
-        mainPage = new Main_Page();
-    }
-
-    @Test
-    public void otobusAramaTesti() {
-
-        /**
+    /**
          * Senaryo:
          * Kullanıcı Antalya'dan İzmir'e otobüs araması yapıyor.
          * İlk olarak kullanıcı Nereden kısmına Antalya seçeneğini seçer.
@@ -40,9 +25,24 @@ public class Otobus_Arama_Test {
          * Test tamamlanır.
          */
 
+    Main_Page mainPage;
+    Seferler_Page seferlerPage;
+
+    @BeforeClass
+    public void setUp() {
+        // Tarayıcı açılıyor ve obilet.com'a yönlendiriliyor.
+        String url = ConfigurationReader.getProperty("url");
+        Driver.getDriver().get(url);
+        mainPage = new Main_Page();
+    }
+
+    @Test
+    public void otobusAramaTesti() {
+
         // Otobüs Arama öncesi Url bilgimizi alalım.
         String url = Driver.getDriver().getCurrentUrl();
         System.out.println("Yönlendirme öncesi URL: " + url);
+        
         // Nereden, Nereye ve tarih seçilerek arama yapılır.
         mainPage.otobusAramaYap("Antalya", "İzmir");
 
