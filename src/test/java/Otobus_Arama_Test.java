@@ -40,6 +40,9 @@ public class Otobus_Arama_Test {
          * Test tamamlanır.
          */
 
+        // Otobüs Arama öncesi Url bilgimizi alalım.
+        String url = Driver.getDriver().getCurrentUrl();
+        System.out.println("Yönlendirme öncesi URL: " + url);
         // Nereden, Nereye ve tarih seçilerek arama yapılır.
         mainPage.otobusAramaYap("Antalya", "İzmir");
 
@@ -47,9 +50,8 @@ public class Otobus_Arama_Test {
         seferlerPage = new Seferler_Page();
 
         // Otobüs araması sonrası seferler sayfasına yönlendirildiği doğrulanır.
-        String url = Driver.getDriver().getCurrentUrl();
-        System.out.println("Yönlendirme öncesi URL: " + url);
-        Assert.assertTrue(url.contains("seferler"), "Seferler sayfasına geçilemedi.");
+        String currentUrl = Driver.getDriver().getCurrentUrl();
+        Assert.assertTrue(currentUrl.contains("seferler"), "Seferler sayfasına geçilemedi.");
         System.out.println("Yönlendirme sonrası URL: " + Driver.getDriver().getCurrentUrl()
                 + "\nSeferler sayfasına yönlendirme başarılı.");
 

@@ -83,7 +83,7 @@ public class Seferler_Page {
             wait.until(ExpectedConditions.visibilityOfAllElements(fiyatlar));
             for (WebElement fiyat : fiyatlar) {
                 if (fiyat.getText().isEmpty()) {
-                    System.out.println("Boş fiyat bulundu!");
+                    System.out.println("Boş fiyat bulundu.");
                     return false;
                 }
             }
@@ -101,8 +101,7 @@ public class Seferler_Page {
             for (WebElement saatElement : seferSaatleri) {
                 String saat = saatElement.getText().trim();
                 System.out.println("Sefer saati: " + saat);
-                if (!saat.startsWith("00") && !saat.startsWith("01")
-                        && !saat.startsWith("02") && !saat.startsWith("03")
+                if (!saat.startsWith("00") && !saat.startsWith("01") && !saat.startsWith("02") && !saat.startsWith("03")
                         && !saat.startsWith("04") && !saat.startsWith("05")) {
                     System.out.println("Filtre dışı saat: " + saat);
                     return false;
