@@ -98,6 +98,7 @@ public class Seferler_Page {
     public boolean saatFiltreKontrol() {
         try {
             wait.until(ExpectedConditions.visibilityOfAllElements(seferSaatleri));
+            Thread.sleep(1000);
             for (WebElement saatElement : seferSaatleri) {
                 String saat = saatElement.getText().trim();
                 System.out.println("Sefer saati: " + saat);
